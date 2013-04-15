@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nhsevidence.ScreeningScheduling", "nhsevidence.ScreeningScheduling\nhsevidence.ScreeningScheduling.csproj", "{E4D6EE16-3FFA-4B89-95CB-2AE82CC464E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nhsevidence.ScreeningScheduling.UnitTests", "nhsevidence.ScreeningScheduling.UnitTests\nhsevidence.ScreeningScheduling.UnitTests.csproj", "{B9CCC8E0-9929-46D6-86ED-55738A7DB6C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nhsevidence.ScreeningScheduling.Core", "nhsevidence.ScreeningScheduling.Core\nhsevidence.ScreeningScheduling.Core.csproj", "{B2537D20-4AC3-424C-91F1-38C08BE002F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2537D20-4AC3-424C-91F1-38C08BE002F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2537D20-4AC3-424C-91F1-38C08BE002F9}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2537D20-4AC3-424C-91F1-38C08BE002F9}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2537D20-4AC3-424C-91F1-38C08BE002F9}.Release|x86.Build.0 = Release|Any CPU
+		{B9CCC8E0-9929-46D6-86ED-55738A7DB6C6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9CCC8E0-9929-46D6-86ED-55738A7DB6C6}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9CCC8E0-9929-46D6-86ED-55738A7DB6C6}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9CCC8E0-9929-46D6-86ED-55738A7DB6C6}.Release|x86.Build.0 = Release|Any CPU
+		{E4D6EE16-3FFA-4B89-95CB-2AE82CC464E8}.Debug|x86.ActiveCfg = Debug|x86
+		{E4D6EE16-3FFA-4B89-95CB-2AE82CC464E8}.Debug|x86.Build.0 = Debug|x86
+		{E4D6EE16-3FFA-4B89-95CB-2AE82CC464E8}.Release|x86.ActiveCfg = Release|x86
+		{E4D6EE16-3FFA-4B89-95CB-2AE82CC464E8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = nhsevidence.ScreeningScheduling\nhsevidence.ScreeningScheduling.csproj
+	EndGlobalSection
+EndGlobal

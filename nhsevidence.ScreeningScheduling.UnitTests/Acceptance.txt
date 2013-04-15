@@ -1,0 +1,23 @@
+tasks : []
+dependencies: []
+result: []
+
+tasks: [a,b]
+dependencies: []
+result: [a,b]
+
+tasks: [a,b]
+dependencies: [a => b]
+result: [b,a]
+
+tasks: [a,b,c,d]
+dependencies: [a => b,c => d]
+result: [b,a,d,c]
+
+tasks: [a,b,c]
+dependencies: [a => b,b => c]
+result: [c,b,a]
+
+tasks: [a,b,c,d]
+dependencies: [a => b,b => c,c => a]
+result: Error - this is a cyclic dependency

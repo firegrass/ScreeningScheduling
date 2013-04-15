@@ -1,0 +1,15 @@
+NHS Evidence Screening Schedule Test 0.1 by Patrick McEvoy
+Usage: screeningscheduling --tasks task1[,task2] --deps task1 => task2,[task3 => task4]
+
+ScreeningScheduling is a simple tool to resolve task order based on a
+list of tasks and dependencies
+
+Options:
+  --help  This help text.
+  --tasks Specific tasks
+  --deps  Specific dependencies
+
+Examples
+
+screeningscheduling --tasks "a,b,c" --deps "a=>b,b=>c"
+
