@@ -29,20 +29,22 @@ namespace nhsevidence.ScreeningScheduling.Core
 		{
 			if (taskName == dependsOnName)
 				throw new Exception (string.Format ("Error adding dependency: Task and dependency were the same value of '{0}'", dependsOnName));
-			if (FindTask (taskName) == null)
-				throw new Exception (string.Format ("Error adding dependency: task named '{0}' not found", taskName));
-			if (FindTask (dependsOnName) == null)
-				throw new Exception (string.Format ("Error adding dependency: task named '{0}' not found", dependsOnName));
 
 			var task = FindTask (taskName);
+			if (task == null)
+				throw new Exception (string.Format ("Error adding dependency: task named '{0}' not found", taskName));
 			var dependentOn = FindTask (dependsOnName);
+			if (dependentOn == null)
+				throw new Exception (string.Format ("Error adding dependency: task named '{0}' not found", dependsOnName));
+
+			if (task.Dependencies.Contains (dependentOn))
+				return;
 
 			// Check this isn't cyclical
 			if (!IsResolvable (task, dependentOn))
-				throw new CyclicalDependencyException (string.Format ("While adding dependency {0} => {1} cyclic dependency ", taskName, dependsOnName));
+				throw new CyclicalDependencyException (string.Format ("While adding dependency {0} => {1} cyclical dependency ", taskName, dependsOnName));
 
-			if (!task.Dependencies.Contains (dependentOn))
-				task.Dependencies.Add (dependentOn);
+			task.Dependencies.Add (dependentOn);
 		}
 
 		public IList<Task> Resolve ()
@@ -55,8 +57,7 @@ namespace nhsevidence.ScreeningScheduling.Core
 			return tasks.Single (t => t.Name == name);
 		}
 
-
-		IList<Task> Resolve (IList<Task> tasks)
+		static IList<Task> Resolve (IList<Task> tasks)
 		{
 			IList<Task> resolved = new List<Task> ();
 			foreach (var task in tasks) {
@@ -76,7 +77,7 @@ namespace nhsevidence.ScreeningScheduling.Core
 			return resolved;
 		}
 
-		bool IsResolvable (Task task, Task dependsOn)
+		static bool IsResolvable (Task task, Task dependsOn)
 		{
 			if (task == dependsOn)
 				return false;

@@ -118,7 +118,7 @@ namespace nhsevidence.ScreeningScheduling.UnitTests
 		#region AdditionalTestCase
 
 		[Test]
-		public void ThirdTierDependency ()
+		public void Duplication ()
 		{
 			//Tasks: a,b,c,f,r,s
 			//Dependencies: a=>b,b=>c,r=>s,s=>b,b=>f,f=>c
