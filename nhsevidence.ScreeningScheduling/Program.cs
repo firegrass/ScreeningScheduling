@@ -31,8 +31,10 @@ namespace nhsevidence.ScreeningScheduling
 				foundTasks = true;
 			}
 
-			if (!foundTasks)
+			if (!foundTasks) {
+				PrintHelp();
 				Environment.Exit (1);
+			}
 
 			var depsMatch = Regex.Match (arguments, @"--deps ([a-zA-Z0-9,=>]+)", RegexOptions.IgnoreCase);
 			if (depsMatch.Success) {
