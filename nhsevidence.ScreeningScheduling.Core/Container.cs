@@ -6,7 +6,7 @@ namespace nhsevidence.ScreeningScheduling.Core
 {
 	public class Container
 	{
-		IList<Task> tasks = new List<Task> ();
+		readonly IList<Task> tasks = new List<Task> ();
 
 		public void AddTasks (string[] names)
 		{
