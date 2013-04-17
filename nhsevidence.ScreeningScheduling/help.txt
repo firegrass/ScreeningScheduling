@@ -11,5 +11,6 @@ Options:
 
 Examples
 
+screeningscheduling --tasks "a,b" --deps "a=>b"
 screeningscheduling --tasks "a,b,c" --deps "a=>b,b=>c"
-
+screeningscheduling --tasks "a,b,c,d,e,f" --deps "a=>f,b=>c,f=>c,c=>d"
